@@ -1,0 +1,15 @@
+# Editor backups (sentinel_edit leaves these on failed transactions)
+*.bak.*
+*.bak
+
+# Historical backups predating git
+*.pre-*.bak
+index.html.pre-vpn.bak
+
+# OS clutter
+.DS_Store
+Thumbs.db
+
+# Editor scratch
+*.swp
+*~

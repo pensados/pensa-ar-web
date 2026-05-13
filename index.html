@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pensa Software | pensa.ar</title>
+  <meta name="description" content="Pensa Software — proyectos open source, herramientas web y apps móviles. Creado por Carlos Torres Pensa." />
+  <meta name="theme-color" content="#050c14" />
+  <link rel="canonical" href="https://pensa.ar/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pensa Software | pensa.ar" />
+  <meta property="og:description" content="Proyectos open source, herramientas web y apps móviles." />
+  <meta property="og:url" content="https://pensa.ar/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+  <link rel="icon" type="image/png" href="/icons/favicon.png">
+  <link rel="apple-touch-icon" href="/icons/favicon.png">
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050c14;
+      --bg2: #0a1520;
+      --bg3: #0f1e2e;
+      --border: rgba(0,210,255,0.13);
+      --border2: rgba(0,210,255,0.07);
+      --cyan: #00d2ff;
+      --cyan-dim: #39e0ff;
+      --text: #cce8f0;
+      --muted: #6a97ae;
+      --muted2: #4a7485;
+      --mono: "Space Mono", monospace;
+      --sans: "IBM Plex Sans", sans-serif;
+      --maxw: 900px;
+      --r: 12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── BACKGROUND ── */
+    .bg-layer { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+    .bg-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(var(--border2) 1px, transparent 1px), linear-gradient(90deg, var(--border2) 1px, transparent 1px);
+      background-size: 52px 52px;
+    }
+    .bg-glow {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 15% 5%, rgba(0,210,255,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 85% 15%, rgba(124,90,255,.06) 0%, transparent 55%);
+    }
+
+    .wrap { width: min(var(--maxw), calc(100% - 40px)); margin: 0 auto; }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes blink  { 0%,100%{opacity:.5} 50%{opacity:1} }
+    .fade   { animation: fadeUp .55s ease both; }
+    .fade-1 { animation-delay: .05s; }
+    .fade-2 { animation-delay: .15s; }
+    .fade-3 { animation-delay: .25s; }
+    .fade-4 { animation-delay: .35s; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border2);
+      background: rgba(5,12,20,.80);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand img { width: 32px; height: 32px; filter: drop-shadow(0 0 5px rgba(0,210,255,.4)); }
+    .brand-name { font-family: var(--mono); font-size: .88rem; color: var(--cyan-dim); letter-spacing: .03em; }
+    .nav-links { display: flex; gap: 0; list-style: none; }
+    .nav-links a { font-size: .78rem; font-weight: 600; color: var(--muted); padding: 7px 12px; border-radius: 8px; letter-spacing: .05em; text-transform: uppercase; transition: color .15s, background .15s; }
+    .nav-links a:hover { color: var(--cyan-dim); background: rgba(0,210,255,.07); }
+
+    /* ── HERO ── */
+    #hero { padding: 80px 0 56px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: .68rem; color: var(--cyan);
+      letter-spacing: .14em; text-transform: uppercase;
+      border: 1px solid var(--border); border-radius: 999px;
+      padding: 5px 14px; margin-bottom: 24px; background: rgba(0,210,255,.04);
+    }
+    .hero-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--cyan); box-shadow:0 0 6px var(--cyan); animation: blink 2s infinite; }
+    #hero h1 { font-family: var(--sans); font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 600; line-height: 1.05; letter-spacing: -.02em; color: #e8f7ff; margin-bottom: 20px; }
+    #hero h1 .accent { color: var(--cyan); }
+    .hero-lead { font-size: 1rem; line-height: 1.85; color: var(--muted); max-width: 52ch; margin-bottom: 32px; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: var(--sans); font-size: .8rem; font-weight: 600;
+      padding: 9px 18px; border-radius: 8px; letter-spacing: .04em;
+      transition: all .18s; border: 1px solid transparent; cursor: pointer;
+    }
+    .btn-primary { background: var(--cyan); color: #050c14; }
+    .btn-primary:hover { background: #39e0ff; }
+    .btn-outline { background: transparent; border-color: var(--border); color: var(--text); }
+    .btn-outline:hover { border-color: rgba(0,210,255,.35); background: rgba(0,210,255,.05); color: var(--cyan-dim); }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: var(--border2); max-width: var(--maxw); margin: 0 auto; }
+
+    /* ── SECTION ── */
+    section { padding: 56px 0; }
+    .section-label {
+      font-family: var(--mono); font-size: .65rem; color: var(--cyan);
+      letter-spacing: .18em; text-transform: uppercase; margin-bottom: 2rem;
+    }
+
+    /* ── PROJECT CARDS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--border2);
+      border: 1px solid var(--border2);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+    .project-card {
+      background: var(--bg);
+      padding: 1.5rem;
+      display: flex; flex-direction: column; gap: 0.45rem;
+      text-decoration: none; color: var(--text);
+      transition: background .18s;
+    }
+    .project-card:hover { background: var(--bg3); }
+    .project-type {
+      font-family: var(--mono); font-size: .62rem; color: var(--cyan);
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .project-name { font-weight: 600; font-size: .95rem; color: #e8f7ff; }
+    .project-desc { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    /* ── APPS LIST ── */
+    .apps-list { display: flex; flex-direction: column; gap: 1px; background: var(--border2); border: 1px solid var(--border2); border-radius: var(--r); overflow: hidden; }
+    .app-item {
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--bg); padding: 1.1rem 1.4rem;
+      text-decoration: none; color: var(--text);
+      transition: background .18s; gap: 1rem;
+    }
+    .app-item:hover { background: var(--bg3); }
+    .app-name { font-weight: 600; font-size: .88rem; color: #e8f7ff; }
+    .app-desc { font-size: .78rem; color: var(--muted); margin-top: .12rem; }
+    .app-arrow { color: var(--muted2); font-size: .95rem; flex-shrink: 0; transition: color .15s; }
+    .app-item:hover .app-arrow { color: var(--cyan); }
+
+    /* ── AUTHOR CARD ── */
+    .author-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 2rem;
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .author-name { font-weight: 600; font-size: 1rem; color: #e8f7ff; }
+    .author-role { font-family: var(--mono); font-size: .72rem; color: var(--cyan); letter-spacing: .06em; }
+    .author-bio { font-size: .85rem; color: var(--muted); line-height: 1.65; }
+    .author-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .3rem; }
+    .author-link {
+      font-family: var(--mono); font-size: .68rem;
+      padding: 4px 12px; border: 1px solid var(--border);
+      border-radius: 6px; color: var(--muted);
+      transition: border-color .15s, color .15s;
+    }
+    .author-link:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border2);
+      padding: 1.8rem 0;
+      text-align: center;
+      font-family: var(--mono); font-size: .68rem; color: var(--muted2);
+    }
+    footer a { color: var(--muted); transition: color .15s; }
+    footer a:hover { color: var(--cyan); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      #hero { padding: 56px 0 40px; }
+      section { padding: 40px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-layer">
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+  </div>
+
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#">
+        <img src="/icons/favicon.svg" alt="Pensa">
+        <span class="brand-name">pensa.ar</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#apps">Apps</a></li>
+        <li><a href="#autor">Autor</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wrap">
+      <p class="hero-badge fade fade-1">Pensa Software</p>
+      <h1 class="fade fade-2">Proyectos abiertos<br>para la <span class="accent">comunidad</span></h1>
+      <p class="hero-lead fade fade-3">
+        Herramientas, apps y utilidades construidas en tiempo libre y publicadas como proyectos abiertos. Sin grandes pretensiones — solo código que resuelve cosas reales.
+      </p>
+      <div class="hero-links fade fade-4">
+        <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
+        <a class="btn btn-outline" href="https://github.com/pensados" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-outline" href="https://pensa.com.ar" target="_blank" rel="noopener">Autor →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos">
+    <div class="wrap">
+      <p class="section-label">Proyectos</p>
+      <div class="projects-grid">
+
+        <a class="project-card" href="https://sentinelx.pensa.ar" target="_blank" rel="noopener">
+          <span class="project-type">Open Source · MCP</span>
+          <span class="project-name">SentinelX</span>
+          <span class="project-desc">Servidor MCP que le permite a Claude o ChatGPT gestionar tu flota de servidores Linux. Multi-host, con allowlist de comandos y operaciones auditables.</span>
+        </a>
+
+        <a class="project-card" href="https://drop.pensa.ar" target="_blank" rel="noopener">
+          <span class="project-type">Servicio · Open Source</span>
+          <span class="project-name">Drop</span>
+          <span class="project-desc">Servicio instantáneo de file drop. Subís un archivo, obtenés una URL pública temporal. Sin cuentas, expiración automática, modo one-shot opcional.</span>
+        </a>
+
+        <a class="project-card" href="https://jsonparser.pensa.ar" target="_blank" rel="noopener">
+          <span class="project-type">Herramienta web</span>
+          <span class="project-name">JSON Parser</span>
+          <span class="project-desc">Parser con resaltado de sintaxis y opción de compartir el JSON por URL.</span>
+        </a>
+
+        <a class="project-card" href="https://cursos.pensa.ar" target="_blank" rel="noopener">
+          <span class="project-type">Educación</span>
+          <span class="project-name">Cursos Android</span>
+          <span class="project-desc">Material propio sobre desarrollo Android con Kotlin.</span>
+        </a>
+
+        <a class="project-card" href="https://buenasfrases.com" target="_blank" rel="noopener">
+          <span class="project-type">Web · App</span>
+          <span class="project-name">Buenas Frases</span>
+          <span class="project-desc">Colección de frases célebres. Disponible como web y app en Play Store.</span>
+        </a>
+
+        <a class="project-card" href="https://venezuela.pensa.ar" target="_blank" rel="noopener">
+          <span class="project-type">Cultura</span>
+          <span class="project-name">Modismos venezolanos</span>
+          <span class="project-desc">Diccionario de expresiones y modismos venezolanos.</span>
+        </a>
+
+        <a class="project-card" href="https://metroid.pensa.ar" target="_blank" rel="noopener">
+          <span class="project-type">Retro · Juegos</span>
+          <span class="project-name">RetroHub</span>
+          <span class="project-desc">Juegos retro jugables en el navegador. NES, N64, PSX. Homenaje a Metroid Prime.</span>
+        </a>
+
+        <a class="project-card" href="https://adbvortex.pensa.ar" target="_blank" rel="noopener">
+          <span class="project-type">Plugin · Android Studio</span>
+          <span class="project-name">AdbVortex</span>
+          <span class="project-desc">Plugin para IntelliJ / Android Studio que comparte la conexión de tu PC con un dispositivo Android vía ADB. Ideal para testear APIs y entornos locales sin acceso público.</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- APPS -->
+  <section id="apps">
+    <div class="wrap">
+      <p class="section-label">Apps en Play Store</p>
+      <div class="apps-list">
+
+        <a class="app-item" href="https://play.google.com/store/apps/details?id=ar.pensa.githubreviewer" target="_blank" rel="noopener">
+          <div>
+            <div class="app-name">GitHub Reviewer</div>
+            <div class="app-desc">Cliente móvil para revisar repos y pull requests de GitHub</div>
+          </div>
+          <span class="app-arrow">↗</span>
+        </a>
+
+        <a class="app-item" href="https://play.google.com/store/apps/details?id=com.torrancio.buenasfrases" target="_blank" rel="noopener">
+          <div>
+            <div class="app-name">Buenas Frases</div>
+            <div class="app-desc">Frases célebres de pensadores, escritores y científicos</div>
+          </div>
+          <span class="app-arrow">↗</span>
+        </a>
+
+        <a class="app-item" href="https://play.google.com/store/apps/details?id=ar.com.pensa.dniscanner" target="_blank" rel="noopener">
+          <div>
+            <div class="app-name">DNI Scanner</div>
+            <div class="app-desc">Escáner de DNI argentino con lectura de código de barras</div>
+          </div>
+          <span class="app-arrow">↗</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- AUTOR -->
+  <section id="autor">
+    <div class="wrap">
+      <p class="section-label">Autor</p>
+      <div class="author-card">
+        <div>
+          <div class="author-name">Carlos Torres Pensa</div>
+          <div class="author-role">Android Developer Sr · Pensa Software</div>
+        </div>
+        <p class="author-bio">
+          Desarrollador Android con más de 8 años de experiencia. Construyo proyectos propios en mi tiempo libre y los publico porque quizás le sirven a alguien. Actualmente trabajando en <strong style="color:#e8f7ff">Banco Galicia</strong>.
+        </p>
+        <div class="author-links">
+          <a class="author-link" href="https://pensa.com.ar" target="_blank" rel="noopener">↗ pensa.com.ar</a>
+          <a class="author-link" href="https://www.linkedin.com/in/carlospensa/" target="_blank" rel="noopener">↗ LinkedIn</a>
+          <a class="author-link" href="https://github.com/CarolusX74" target="_blank" rel="noopener">↗ GitHub</a>
+          <a class="author-link" href="https://github.com/pensados" target="_blank" rel="noopener">↗ PensaDOS</a>
+          <a class="author-link" href="https://play.google.com/store/apps/developer?id=Pensa" target="_blank" rel="noopener">↗ Play Store</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      © 2026 <a href="https://pensa.com.ar">Carlos Javier Torres Pensa</a> · <a href="/legal/marca/">Pensa Software®</a> · pensa.ar
+    </div>
+  </footer>
+
+</body>
+</html>

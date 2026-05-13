@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PensaInfra Wallpaper</title>
+
+    <!-- Favicon opcional -->
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    <!-- Fuente futurista -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background: #020409;
+            font-family: 'Orbitron', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Tron Minimal Background */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(
+                circle at center,
+                rgba(0, 200, 255, 0.12),
+                rgba(0, 0, 0, 0.85) 70%
+            );
+            z-index: -2;
+        }
+
+        /* Sutil energía alrededor */
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(
+                circle at center,
+                rgba(0, 200, 255, 0.10),
+                transparent 60%
+            );
+            filter: blur(40px);
+            z-index: -1;
+        }
+
+        /* Logo centrado perfecto */
+        .center-wrapper {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .logo {
+            width: 240px;                 /* tamaño ideal para Zenbook */
+            filter: drop-shadow(0 0 10px #00eaff)
+                    drop-shadow(0 0 20px #00eaff);
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0% { filter: drop-shadow(0 0 8px #00eaff); }
+            50% { filter: drop-shadow(0 0 28px #00eaff); }
+            100% { filter: drop-shadow(0 0 8px #00eaff); }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-wrapper">
+        <img src="/icons/logo_negro.svg" alt="Pensa Logo" class="logo">
+    </div>
+</body>
+</html>

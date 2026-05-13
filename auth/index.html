@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Iniciar sesión — PensaAuth 🔐</title>
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+    h2 { font-size: 1.6em; margin-bottom: 0.5em; }
+    p  { color: #8b949e; margin-bottom: 2em; }
+    form {
+      display: inline-block;
+      padding: 25px 35px;
+      border-radius: 12px;
+      border: 1px solid #30363d;
+      background: #161b22;
+    }
+    input, button {
+      width: 220px;
+      margin: 8px auto;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #30363d;
+      background: #0d1117;
+      color: #c9d1d9;
+      display: block;
+    }
+    button {
+      background: #238636;
+      border: none;
+      cursor: pointer;
+      margin-top: 12px;
+      color: #fff;
+    }
+    button:hover { background: #2ea043; }
+    .footer { margin-top: 40px; font-size: 0.85em; color: #666; }
+  </style>
+</head>
+<body>
+  <h2>PensaAuth 🔐</h2>
+  <p>Inicio de sesión unificado de PensaInfra.</p>
+
+  <!-- Gateway form (mismo backend que /auth/login) -->
+  <form method="post" action="/auth/login">
+    <input type="hidden" name="redirect" id="redirect" value="">
+    <input type="text" name="username" placeholder="Usuario" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <button type="submit">Entrar</button>
+  </form>
+
+  <div class="footer">
+    <p>PensaAuth Gateway — v3.0</p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("redirect").value = params.get("redirect") || "";
+  </script>
+</body>
+</html>

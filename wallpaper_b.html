@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PensaInfra ⚡</title>
+
+    <!-- 🔹 Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+    <link rel="icon" type="image/png" href="/icons/favicon.png">
+    <link rel="apple-touch-icon" href="/icons/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+
+
+    <!-- Fuente futurista -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background: #020409;
+            color: #8be9ff;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* 🔹 Fondo tipo "Tron grid" */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                linear-gradient(rgba(0, 200, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 200, 255, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -2;
+        }
+
+        /* 🔹 Glow azul suave */
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(0, 200, 255, 0.15), transparent 70%);
+            z-index: -1;
+        }
+
+        /* Logo Pensa */
+        .logo {
+            width: 140px;
+            margin-top: 60px;
+            filter: drop-shadow(0 0 8px #00eaff) drop-shadow(0 0 15px #00eaff);
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { filter: drop-shadow(0 0 6px #00eaff); }
+            50% { filter: drop-shadow(0 0 18px #00eaff); }
+            100% { filter: drop-shadow(0 0 6px #00eaff); }
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2.6em;
+            color: #74eaff;
+            text-shadow: 0 0 12px #00eaff;
+        }
+
+        p {
+            margin-top: -10px;
+            margin-bottom: 30px;
+            color: #a9d9ff;
+            font-size: 1.1em;
+        }
+
+        /* 🔹 Botones Tron */
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 28px;
+            border: 2px solid #00eaff;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #00eaff;
+            font-size: 1.05em;
+            letter-spacing: 1px;
+            transition: 0.25s;
+            position: relative;
+        }
+
+        /* Glow al pasar */
+        .links a:hover {
+            background-color: #00eaff;
+            color: #020409;
+            box-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff;
+        }
+
+        .container {
+            margin-bottom: 80px;
+        }
+
+        .links {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ⭐ Logo de Pensa Software -->
+    <img src="/icons/logo_negro.svg" alt="Pensa Logo" class="logo">
+
+    <h1>Pensa Software</h1>
+    <p>Sistemas relativos, infraestructura absoluta.</p>
+
+    <div class="links container">
+        <a href="https://nexus.pensa.ar" target="_blank">Nexus</a>
+        <a href="https://nas.pensa.ar" target="_blank">NAS</a>
+        <a href="https://buenasfrases.club" target="_blank">BuenasFrases</a>
+        <a href="https://econoticias.site" target="_blank">EcoNoticias</a>
+        <a href="https://dns.pensa.ar" target="_blank">DNS (LAN)</a>
+        <a href="https://proxy.pensa.ar" target="_blank">Proxy</a>
+        <a href="https://minecraft.pensa.ar" target="_blank">Minecraft</a>
+        <a href="https://gitnotify.pensa.ar" target="_blank">GitNotify</a>
+        <a href="https://git.pensa.ar" target="_blank">Gitea</a>
+        <a href="https://ci.pensa.ar" target="_blank">Jenkins</a>
+    </div>
+
+</body>
+</html>

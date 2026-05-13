@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pensa Reviewer – Política de Privacidad</title>
+  <meta name="description" content="Política de Privacidad de Pensa Reviewer (for GitHub) para Android." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Pensa Reviewer – Política de Privacidad" />
+  <meta property="og:description" content="Cómo Pensa Reviewer maneja tus datos, tokens y privacidad." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pensa.ar/pensareviewer/privacy" />
+  <meta property="og:locale" content="es_AR" />
+  <style>
+    :root { --fg:#e7e7e7; --bg:#0b0b0c; --muted:#9aa0a6; --accent:#7cc4ff; --card:#141416; --border:#242629; }
+    * { box-sizing: border-box; }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif; line-height:1.6; }
+    header,main,footer { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header { padding-top: 32px; }
+    h1,h2,h3 { line-height:1.25; }
+    h1 { font-size: clamp(1.8rem, 2.4vw, 2.2rem); margin: 0 0 6px; }
+    .sub { color: var(--muted); margin: 0 0 16px; }
+    nav.lang { display:flex; gap:12px; margin:16px 0 24px; }
+    nav.lang a { color: var(--accent); text-decoration: none; padding: 6px 10px; border:1px solid var(--border); border-radius: 10px; }
+    section.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; margin: 16px 0; }
+    ul,ol { padding-left: 20px; }
+    code,kbd { background:#1b1c1f; padding:2px 6px; border-radius:8px; border:1px solid #2a2d31; }
+    a { color: var(--accent); }
+    .muted { color: var(--muted); }
+    footer { color: var(--muted); font-size: .95rem; padding-bottom: 48px; }
+    .small { font-size: .95rem; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Pensa Reviewer – Política de Privacidad</h1>
+  <p class="sub">Última actualización: 2 de noviembre de 2025 • Titular: Pensa (Argentina)</p>
+  <nav class="lang">
+    <a href="#es">Español</a>
+    <a href="#en">English</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Español -->
+  <section id="es" class="card" aria-labelledby="es-title">
+    <h2 id="es-title">Resumen</h2>
+    <p><strong>Pensa Reviewer</strong> es una app Android para revisar Pull Requests y repositorios de GitHub. No operamos servidores propios para procesar tus datos: la app se comunica directamente con la <strong>API oficial de GitHub</strong>. Tus tokens (OAuth o personales “classic”) se almacenan <strong>localmente en tu dispositivo</strong> y podés eliminarlos en cualquier momento desde la app.</p>
+  </section>
+
+  <section class="card">
+    <h3>1) Datos que tratamos</h3>
+    <ul>
+      <li><strong>Credenciales de GitHub</strong>: tokens <em>OAuth</em> o <em>personal access token (classic)</em>. Se guardan localmente en tu dispositivo. <strong>No</strong> se envían a servidores de Pensa.</li>
+      <li><strong>Datos de GitHub</strong> (lectura): PRs, comentarios, archivos y metadatos asociados, obtenidos desde la API de GitHub en tiempo real según los permisos de tu token.</li>
+      <li><strong>Diagnóstico y estabilidad</strong>: de forma opcional y anónima mediante Google Play (si tu dispositivo lo habilita) podemos recibir <em>crash reports</em> y métricas técnicas para mejorar la calidad.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>2) Finalidades</h3>
+    <ul>
+      <li>Prestar la funcionalidad principal: listar repositorios, revisar PRs y ver diffs/comentarios.</li>
+      <li>Permitir el uso de <strong>múltiples perfiles</strong> de GitHub y el cambio rápido entre ellos.</li>
+      <li>Mejora del producto y resolución de fallas (diagnóstico técnico anónimo, si está habilitado).</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>3) Base legal</h3>
+    <p>El tratamiento se basa en tu <strong>consentimiento</strong> (al iniciar sesión con OAuth o ingresar un token) y en el <strong>interés legítimo</strong> de proveer y mantener la app (diagnóstico técnico).</p>
+  </section>
+
+  <section class="card">
+    <h3>4) Almacenamiento y retención</h3>
+    <ul>
+      <li>Los <strong>tokens</strong> y preferencias se guardan localmente en el dispositivo. Podés <strong>revocar y borrar</strong> tokens desde la app o en tu cuenta de GitHub.</li>
+      <li>No retenemos datos en servidores propios. Los logs de fallos que recibimos vía Google Play (si habilitado) se conservan el tiempo mínimo necesario para diagnóstico.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>5) Compartición con terceros</h3>
+    <ul>
+      <li><strong>GitHub</strong>: proveedor de API. El acceso depende de los permisos del token que autorices.</li>
+      <li><strong>Google Play</strong>: distribución de la app y, opcionalmente, diagnósticos de fallos.</li>
+      <li>No vendemos ni comercializamos datos personales.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>6) Seguridad</h3>
+    <p>Aplicamos buenas prácticas de seguridad a nivel de app. Aun así, ninguna medida es infalible. Recomendamos usar <strong>OAuth</strong> o tokens con <strong>scopes mínimos</strong> y revocarlos si perdés el dispositivo.</p>
+  </section>
+
+  <section class="card">
+    <h3>7) Derechos del usuario</h3>
+    <ul>
+      <li>Acceso, rectificación, eliminación y portabilidad de datos que obren en tu poder.</li>
+      <li>Revocar el consentimiento (p. ej., cerrar sesión o borrar tokens).</li>
+      <li>Para consultas: <a href="mailto:contacto@pensa.ar">contacto@pensa.ar</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>8) Menores</h3>
+    <p>La app está dirigida a personas adultas (desarrolladores). No recabamos información dirigida a menores.</p>
+  </section>
+
+  <section class="card">
+    <h3>9) Cambios en esta política</h3>
+    <p>Podemos actualizar esta política para reflejar mejoras o requisitos legales. Publicaremos la versión vigente en esta URL indicando la fecha de actualización.</p>
+  </section>
+
+  <section class="card small">
+    <h3>Permisos de Android (referencia)</h3>
+    <ul>
+      <li><code>INTERNET</code> – Acceso a la API de GitHub.</li>
+      <li><code>ACCESS_NETWORK_STATE</code> – Verificar conectividad.</li>
+      <li><em>Opcionales</em>: notificaciones u otros, si se agregan en futuras versiones (se informará).</li>
+    </ul>
+  </section>
+
+  <!-- English -->
+  <section id="en" class="card" aria-labelledby="en-title">
+    <h2 id="en-title">Privacy Policy (English)</h2>
+    <p><strong>Pensa Reviewer</strong> is an Android app to review GitHub pull requests and repositories. We do not run our own data-processing servers: the app communicates directly with the <strong>official GitHub API</strong>. Your tokens (OAuth or classic personal tokens) are stored <strong>locally on your device</strong> and can be deleted at any time within the app.</p>
+  </section>
+
+  <section class="card">
+    <h3>1) Data We Process</h3>
+    <ul>
+      <li><strong>GitHub Credentials</strong>: OAuth tokens or classic personal access tokens. Stored locally on device. <strong>Not</strong> sent to Pensa servers.</li>
+      <li><strong>GitHub Data</strong> (read-only): PRs, comments, files and related metadata fetched from GitHub’s API according to your token scopes.</li>
+      <li><strong>Diagnostics & Stability</strong>: optionally via Google Play (if enabled on your device), we may receive crash reports and technical metrics to improve quality.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>2) Purposes</h3>
+    <ul>
+      <li>Provide core functionality: browse repos, review PRs, view diffs/comments.</li>
+      <li>Enable <strong>multiple profiles</strong> and fast account switching.</li>
+      <li>Product improvement and troubleshooting (anonymous technical diagnostics, if enabled).</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>3) Legal Basis</h3>
+    <p>Processing relies on your <strong>consent</strong> (when signing in via OAuth or entering a token) and our <strong>legitimate interest</strong> to provide and maintain the app (technical diagnostics).</p>
+  </section>
+
+  <section class="card">
+    <h3>4) Storage & Retention</h3>
+    <ul>
+      <li><strong>Tokens</strong> and preferences live on your device. You can <strong>revoke/delete</strong> tokens within the app or on GitHub.</li>
+      <li>No data is stored on our own servers. Crash logs received via Google Play (if enabled) are kept for the minimum time required for troubleshooting.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>5) Sharing with Third Parties</h3>
+    <ul>
+      <li><strong>GitHub</strong>: API provider. Access depends on the scopes you authorize.</li>
+      <li><strong>Google Play</strong>: app distribution and optional crash/diagnostics.</li>
+      <li>We do not sell or trade personal data.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>6) Security</h3>
+    <p>We follow app-level security best practices. However, no method is 100% secure. We recommend using <strong>OAuth</strong> or least-privilege tokens and revoking them if your device is lost.</p>
+  </section>
+
+  <section class="card">
+    <h3>7) Your Rights</h3>
+    <ul>
+      <li>Access, rectification, deletion, and portability of data in your control.</li>
+      <li>Withdraw consent (e.g., sign out or delete tokens).</li>
+      <li>Contact: <a href="mailto:contacto@pensa.ar">contacto@pensa.ar</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h3>8) Children</h3>
+    <p>This app targets adult users (developers). We do not knowingly collect information from children.</p>
+  </section>
+
+  <section class="card">
+    <h3>9) Changes to this Policy</h3>
+    <p>We may update this policy to reflect improvements or legal requirements. We will post the current version at this URL with the update date.</p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Pensa. Esta página describe la Política de Privacidad de la app <em>Pensa Reviewer</em>. Para consultas: <a href="mailto:contacto@pensa.ar">contacto@pensa.ar</a>.</p>
+</footer>
+</body>
+</html>
